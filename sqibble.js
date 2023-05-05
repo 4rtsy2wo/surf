@@ -165,11 +165,11 @@ function removeDesign() {
 window._P = () => {
   // Add the patterns to the "pG" element
   document.getElementById("pG").innerHTML += `
-    <pattern id="diagonal" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <pattern id="Diagonal" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
       <rect width="100%" height="100%" fill="#${C[8]}" />
       <path d="M0 20 L40 20" stroke="#${C[9]}" stroke-width="5" />
     </pattern>
-    <pattern id="polkadot" width="40" height="40" patternUnits="userSpaceOnUse">
+    <pattern id="Polkadot" width="40" height="40" patternUnits="userSpaceOnUse">
       <rect width="100%" height="100%" fill="#${C[7]}" />
       <circle cx="20" cy="20" r="15" fill="#${C[6]}" />
     </pattern>
@@ -181,23 +181,23 @@ window._G = (frameType) => {
   let stop1, stop2;
   // Determine the gradient stops based on the frame type
   switch (frameType) {
-    case "unicolor":
+    case "Unicolor":
       stop1 = `#${C[1]}`;
       stop2 = `#${C[1]}`;
       break;
-    case "dualcolor":
+    case "Dualcolor":
       stop1 = `#${C[1]}`;
       stop2 = `#${C[2]}`;
       break;
-    case "down transparent":
+    case "DOWNTransparent":
       stop1 = `#${C[1]}`;
       stop2 = "#0000";
       break;
-    case "up transparent":
+    case "UPTransparent":
       stop1 = `#0000`;
       stop2 = `#${C[1]}`;
       break;
-    case "frameless":
+    case "Frameless":
       stop1 = `#0000`;
       stop2 = `#0000`;
       break;
