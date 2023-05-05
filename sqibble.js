@@ -379,7 +379,7 @@ window._B = (a) => {
         y: SI[i] * 0.05,
         width: SI[i] * 0.9,
         height: SI[i] * 0.9,
-        href: `"${LI[i]}"`,
+        href: LI[i],
         style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;stroke: #333; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`,
       });
     }
