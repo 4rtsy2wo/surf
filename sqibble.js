@@ -266,7 +266,7 @@ window._E = () => {
 window._GB = () => {
   const greybitsGroup = acdc(u("fG"), "g", {
     id: "g",
-    transform: "translate(345)",
+    transform: "translate(300)",
   });
 
   for (let i = 0; i < 8; i++) {
