@@ -1,5 +1,5 @@
 // exp_sQ.js
-M=["𓃥","𓃰","𓃯","𓃭","𓃸","𓃩","𓃶","𓃻","𓃹","𓆈","𓆉","𓆌","𓆏","𓆗","𓆙","𓆣","𓆤","𓆧","𓆨","𓆛","𓆜","𓆝","𓆞","𓆡","𓅃","𓅐","𓅓","𓅘","𓅙","𓅜","𓅯","𓅨"];
+MARK = ["𓃥","𓃰","𓃯","𓃭","𓃸","𓃩","𓃶","𓃻","𓃹","𓆈","𓆉","𓆌","𓆏","𓆗","𓆙","𓆣","𓆤","𓆧","𓆨","𓆛","𓆜","𓆝","𓆞","𓆡","𓅃","𓅐","𓅓","𓅘","𓅙","𓅜","𓅯","𓅨"];
 ej = ["🎭", "🧬"];
 S = window.S;
 //helpers double X( for now
@@ -114,6 +114,7 @@ window._eventHandlers = () => {
       .slice(56, 64)
       .map((h) => "#" + h.repeat(3));
     C = CH[I].match(/(.{6})/g);
+
     // Call the updateData() function with the new variables
     updateData();
   });
@@ -132,12 +133,12 @@ window._P = () => {
   // Add the patterns to the "pG" element
   document.getElementById("pG").innerHTML += `
     <pattern id="Diagonal" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="100%" height="100%" fill="#${C[13]}" />
-      <path d="M0 20 L40 20" stroke="#${C[14]}" stroke-width="5" />
+      <rect width="100%" height="100%" fill="#${C[8]}" />
+      <path d="M0 20 L40 20" stroke="#${C[9]}" stroke-width="5" />
     </pattern>
     <pattern id="Polkadot" width="40" height="40" patternUnits="userSpaceOnUse">
-      <rect width="100%" height="100%" fill="#${C[13]}" />
-      <circle cx="20" cy="20" r="15" fill="#${C[14]}" />
+      <rect width="100%" height="100%" fill="#${C[7]}" />
+      <circle cx="20" cy="20" r="15" fill="#${C[6]}" />
     </pattern>
   `;
 };
@@ -162,10 +163,6 @@ window._G = (frameType) => {
     case "UPTransparent":
       stop1 = `#0000`;
       stop2 = `#${C[1]}`;
-      break;
-    case "BG":
-      stop1 = `#${C[0]}`;
-      stop2 = `#${C[0]}`;
       break;
     case "Frameless":
       stop1 = `#0000`;
@@ -262,28 +259,28 @@ window._O = () => {
   const circleData = [
     {
       id: "O0",
-      cx: P[12],
-      cy: P[13],
-      r: SI[5],
+      cx: P[2],
+      cy: P[3],
+      r: SI[0],
       sw: SW[2] * 3.14,
-      dur: D[7],
+      dur: D[3],
     },
     {
       id: "O1",
-      cx: P[14],
-      cy: P[13],
-      r: SI[5] * 0.42,
+      cx: P[4],
+      cy: P[3],
+      r: SI[0] * 0.42,
       sw: SW[3] * 0.42,
-      dur: D[8],
+      dur: D[4],
       parent: middleGroup,
     },
     {
       id: "O2",
-      cx: P[15],
-      cy: P[13],
-      r: SI[5] * 0.21,
+      cx: P[5],
+      cy: P[3],
+      r: SI[0] * 0.21,
       sw: SW[4] * 6.9,
-      dur: D[9],
+      dur: D[5],
       parent: innerGroup,
     },
   ];
@@ -339,7 +336,7 @@ window._B = (a) => {
       width: SI[i],
       height: SI[i],
       fill: "#" + C[i + 3],
-      style: `transform-origin: 50% 50%;rx: 10;stroke-width: 5;stroke: #${C[i+8]}; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s`,
+      style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;stroke: #333; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s`,
     });
 
     if (i < LI.length) {
@@ -350,7 +347,7 @@ window._B = (a) => {
         width: SI[i] * 0.9,
         height: SI[i] * 0.9,
         href: LI[i],
-        style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`,
+        style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;stroke: #333; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`,
       });
     }
   }
@@ -359,8 +356,8 @@ window._B = (a) => {
 // create lines
 window._L = (v, h) => {
   for (let i = 0; i < v; i++) {
-    const strokeWidth = i === 0 ? SW[0] : SW[0] * 0.25;
-    const position = P[10] - strokeWidth * 0.5;
+    const strokeWidth = i === 0 ? SW[i] : SW[0] * 0.25;
+    const position = P[0] - strokeWidth * 0.5;
 
     const line = acdc(u("lG"), "line", {
       id: `LV${i}`,
@@ -375,13 +372,13 @@ window._L = (v, h) => {
       attributeName: "y2",
       from: "0",
       to: "1024",
-      dur: `${D[5] / 15}`,
+      dur: `${D[0] / 15}`,
     });
   }
 
   for (let i = 0; i < h; i++) {
-    const strokeWidth = i === 0 ? SW[1] : SW[1] * 0.25;
-    const position = P[11] - strokeWidth * 0.5;
+    const strokeWidth = i === 0 ? SW[h + i] : SW[h] * 0.25;
+    const position = P[1] - strokeWidth * 0.5;
 
     const line = acdc(u("lG"), "line", {
       id: `LH${i}`,
@@ -396,8 +393,7 @@ window._L = (v, h) => {
       attributeName: "x2",
       from: "0",
       to: "1024",
-      dur: `${D[v > 6 ? 6 : 1] / 15}`,
+      dur: `${D[v > 0 ? 0 : 1] / 15}`,
     });
   }
 };
-
