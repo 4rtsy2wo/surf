@@ -310,27 +310,17 @@ window._O = () => {
 };
 // create badges
 window._B = (a) => {
-  const badgePositions = [
-    { x: -128, y: -128, si: 512 },
-    { x: -128, y: 512, si: 512 },
-    { x: 512, y: -128, si: 512 },
-    { x: 512, y: 512, si: 512 },
-    { x: 0, y: 0, si: 512 },
-    { x: 256, y: 256, si: 256 },
-  ];
-
-  let badgeIndex = 0;
-  const badgePositionsLength = badgePositions.length;
+  const sizeBoundary = 128;
 
   for (let i = 0; i < a; i++) {
-    const { x, y, si } = badgePositions[badgeIndex];
-    badgeIndex = (badgeIndex + 1) % badgePositionsLength;
-    const [nX, nY] = [(P[i * 2] - 100) / 924, (P[i * 2 + 1] - 100) / 924];
-    const scaledSize = si * 0.5;
+    
+    const x = P[i] - sizeBoundary;
+    const y = P[i+1] - sizeBoundary;
+
     const badgeGroup = acdc(u("nG"), "g", {
       id: `G${i}`,
       class: "b",
-      transform: `translate(${x + nX * scaledSize} ${y + nY * scaledSize})`,
+      transform: `translate(${x} ${y})`,
     });
 
     acdc(badgeGroup, "rect", {
