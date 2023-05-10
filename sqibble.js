@@ -310,7 +310,7 @@ window._O = () => {
 };
 // create badges
 window._B = (a) => {
-  const sizeBoundary = 128;
+  const sizeBoundary = 200;
 
   for (let i = 0; i < a; i++) {
     
