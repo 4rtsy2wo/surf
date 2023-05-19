@@ -311,11 +311,13 @@ window._O = () => {
 // create badges
 window._B = (a) => {
   const sizeBoundary = 200;
+  let pIndex = 0; // Separated variable for P[]
 
   for (let i = 0; i < a; i++) {
     
-    const x = P[i] - sizeBoundary;
-    const y = P[i+1] - sizeBoundary;
+    const x = P[pIndex] - sizeBoundary;
+    const y = P[pIndex+1] - sizeBoundary;
+    pIndex += 2; // increment by 2 for each iteration
 
     const badgeGroup = acdc(u("nG"), "g", {
       id: `G${i}`,
@@ -344,6 +346,7 @@ window._B = (a) => {
     }
   }
 };
+
 
 // create lines
 window._L = (v, h) => {
