@@ -331,7 +331,7 @@ window._B = (a) => {
       width: SI[i],
       height: SI[i],
       fill: "#" + C[i + 3],
-      style: `transform-origin: 50% 50%;rx: 10;stroke-width: 5;stroke: #${C[i+8]}; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s`,
+      style: `transform-origin: (x + (SI[i] / 2)) + "px " + (y + (SI[i] / 2)) + "px";rx: 10;stroke-width: 5;stroke: #${C[i+8]}; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s`,
     });
 
     if (i < LI.length) {
@@ -342,7 +342,7 @@ window._B = (a) => {
         width: SI[i] * 0.9,
         height: SI[i] * 0.9,
         href: LI[i],
-        style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`,
+        style: `transform-origin: (x + (SI[i] / 2)) + "px " + (y + (SI[i] / 2)) + "px";rx: 20;stroke-width: 5;transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`,
       });
     }
   }
