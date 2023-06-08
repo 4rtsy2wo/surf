@@ -82,7 +82,7 @@ window._eventHandlers = () => {
   // Toggle the display of the "m" element when "E1" is clicked
   u("E1").addEventListener("click", () => {
     u("m").style.display = u("m").style.display === "block" ? "none" : "block";
-    console.log("nothing happens?");
+    console.log("Nft Display toggled");
   });
   // Toggle the visibility of all images in the "nG" element when "A0" is clicked
   u("A0").addEventListener("click", () => {
@@ -90,7 +90,7 @@ window._eventHandlers = () => {
     images.forEach((image) => {
       image.style.visibility =
         image.style.visibility === "visible" ? "hidden" : "visible";
-      console.log("nothing happens?");
+      console.log("Background Display toggled");
     });
   });
   // Toggle the visibility of the image in the "sG" element when "A1" is clicked
@@ -98,7 +98,7 @@ window._eventHandlers = () => {
     let image = document.querySelector("#sG image");
     image.style.visibility =
       image.style.visibility === "visible" ? "hidden" : "visible";
-    console.log("nothing happens?");
+    console.log("NOT OCCUPIED YET");
   });
   // Increment the global variable S and log it when "A2" is clicked
   u("A2").addEventListener("click", () => {
