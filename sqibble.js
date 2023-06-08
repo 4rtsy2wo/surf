@@ -65,21 +65,21 @@ window._H = () => {
 
 // event listeners
 window._eventHandlers = () => {
-	const elements = ['E0', 'E1', 'A0', 'A1', 'A2', 'T']
+	const elements = ['E0', 'E1', 'A0', 'A1', 'A2', 'T', 'sparkMenu']
 	elements.forEach((elementId) => {
 		const element = u(elementId)
 		const clone = element.cloneNode(true)
 		element.parentNode.replaceChild(clone, element)
 	})
-}
+
   // Open profile gallery
   u("E0").addEventListener("click", () => {
-    window.open("https://www.google.com", "_blank");
+    window.open("localhost:5173/portals/"+FD[0], "_blank");
   });
   // Toggle the display of the "m" element when "E1" is clicked
   u("E1").addEventListener("click", () => {
     u("m").style.display = u("m").style.display === "block" ? "none" : "block";
-    console.log("Nft Display toggled");
+    console.log("nothing happens?");
   });
   // Toggle the visibility of all images in the "nG" element when "A0" is clicked
   u("A0").addEventListener("click", () => {
@@ -87,19 +87,20 @@ window._eventHandlers = () => {
     images.forEach((image) => {
       image.style.visibility =
         image.style.visibility === "visible" ? "hidden" : "visible";
-      console.log("Background Display toggled");
+      console.log("Show NFTs toggled");
     });
   });
   // Toggle the visibility of the image in the "sG" element when "A1" is clicked
   u("A1").addEventListener("click", () => {
-    document.getElementById('my-drawer').checked = true
-    console.log("spark DRAWER");
+    let image = document.querySelector("#sG image");
+    image.style.visibility =
+      image.style.visibility === "visible" ? "hidden" : "visible";
+    console.log("Show BG toggled");
   });
   // Increment the global variable S and log it when "A2" is clicked
   u("A2").addEventListener("click", () => {
-    S = (S + 1) % V.length;
-    console.log("S", window.S);
-    console.log("nothing happens?");
+   document.getElementById('my-drawer').checked = true
+	  console.log("Spark Menu");
   });
   u("T").addEventListener("click", () => {
     window.S = (S + 1) % V.length;
