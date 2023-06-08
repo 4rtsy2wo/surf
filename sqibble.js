@@ -65,7 +65,7 @@ window._H = () => {
 
 // event listeners
 window._eventHandlers = () => {
-	const elements = ['E0', 'E1', 'A0', 'A1', 'A2', 'T', 'sparkMenu']
+	const elements = ['E0', 'E1', 'A0', 'A1', 'A2', 'T']
 	elements.forEach((elementId) => {
 		const element = u(elementId)
 		const clone = element.cloneNode(true)
