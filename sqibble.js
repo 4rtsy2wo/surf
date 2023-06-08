@@ -71,6 +71,7 @@ window._eventHandlers = () => {
 		const clone = element.cloneNode(true)
 		element.parentNode.replaceChild(clone, element)
 	})
+}
   // Open profile gallery
   u("E0").addEventListener("click", () => {
     window.open("https://www.google.com", "_blank");
