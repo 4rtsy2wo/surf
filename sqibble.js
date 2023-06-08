@@ -95,10 +95,8 @@ window._eventHandlers = () => {
   });
   // Toggle the visibility of the image in the "sG" element when "A1" is clicked
   u("A1").addEventListener("click", () => {
-    let image = document.querySelector("#sG image");
-    image.style.visibility =
-      image.style.visibility === "visible" ? "hidden" : "visible";
-    console.log("NOT OCCUPIED YET");
+    document.getElementById('my-drawer').checked = true
+    console.log("spark DRAWER");
   });
   // Increment the global variable S and log it when "A2" is clicked
   u("A2").addEventListener("click", () => {
