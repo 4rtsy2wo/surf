@@ -65,12 +65,16 @@ window._H = () => {
 
 // event listeners
 window._eventHandlers = () => {
-  const elements = ["E0", "E1", "A0", "A1", "A2", "T"];
-  elements.forEach((elementId) => {
-    const element = u(elementId);
-    const clone = element.cloneNode(true);
-    element.parentNode.replaceChild(clone, element);
-  });
+	const elements = ['E0', 'E1', 'A0', 'A1', 'A2', 'T', 'sparkMenu']
+	elements.forEach((elementId) => {
+		const element = u(elementId)
+		const clone = element.cloneNode(true)
+		element.parentNode.replaceChild(clone, element)
+	})
+	// Open sparkMenu
+	u('sparkMenu').addEventListener('click', () => {
+		document.getElementById('my-drawer').checked = true
+	})
   // Open profile gallery
   u("E0").addEventListener("click", () => {
     window.open("https://www.google.com", "_blank");
