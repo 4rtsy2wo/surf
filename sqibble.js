@@ -105,7 +105,7 @@ window._eventHandlers = () => {
 	})
 	// Open profile gallery
 	u('E0').addEventListener('click', () => {
-		window.open('http://localhost:5173/portals/' + FD[0], '_blank')
+		window.open('http://localhost:5173/gallery, '_blank')
 	})
 	// Toggle the display of the "m" element when "E1" is clicked
 	u('E1').addEventListener('click', () => {
