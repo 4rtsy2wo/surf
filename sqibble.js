@@ -116,20 +116,21 @@ window._eventHandlers = () => {
 	u('A0').addEventListener('click', () => {
 		let images = document.querySelectorAll('#nG image')
 		images.forEach((image) => {
-			image.style.visibility = image.style.visibility === 'visible' ? 'hidden' : 'visible'
-			console.log('Toggle BG DISPLAY')
+		image.style.visibility = image.style.visibility === 'visible' ? 'hidden' : 'visible'
+		console.log('Toggle NFT DISPLAY')
 		})
 	})
 	// Toggle the visibility of the image in the "sG" element when "A1" is clicked
 	u('A1').addEventListener('click', () => {
-		document.getElementById('my-drawer').checked = true
-		console.log('Toggle SparkMENU')
+		let image = document.querySelector("#sG image");
+		image.style.visibility =
+		image.style.visibility === "visible" ? "hidden" : "visible";
+		console.log('Toggle BG DISPLAY')
 	})
 	// Increment the global variable S and log it when "A2" is clicked
 	u('A2').addEventListener('click', () => {
-		S = (S + 1) % V.length
-		console.log('S', window.S)
-		console.log('nothing happens?')
+		document.getElementById('my-drawer').checked = true
+		console.log('Toggle SparkMENU')
 	})
 	u('T').addEventListener('click', () => {
 		window.S = (S + 1) % V.length
@@ -145,7 +146,7 @@ window._eventHandlers = () => {
 			.map((h) => '#' + h.repeat(3))
 		C = CH[I].match(/(.{6})/g)
 		// Call the updateData() function with the new variables
-		updateData()
+		window._H()
 	})
 }
 
