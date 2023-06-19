@@ -343,8 +343,10 @@ window._O = () => {
 window._B = (a) => {
 	const sizeBoundary = 200
 	let pIndex = 0 // Separated variable for P[]
-
+	
 	for (let i = 0; i < a; i++) {
+		const transformOriginX = SI[i] / 2;
+		const transformOriginY = SI[i] / 2;
 		const x = P[pIndex] - sizeBoundary
 		const y = P[pIndex + 1] - sizeBoundary
 		pIndex += 2 // increment by 2 for each iteration
@@ -360,7 +362,7 @@ window._B = (a) => {
 			width: SI[i],
 			height: SI[i],
 			fill: '#' + C[i + 3],
-			style: `transform-origin: 50% 50%;rx: 10;stroke-width: 5;stroke: #${
+			style: `transform-box: fill-box;transform-origin: center center;rx: 10;stroke-width: 5;stroke: #${
 				C[i + 8]
 			}; transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s`
 		})
@@ -373,7 +375,7 @@ window._B = (a) => {
 				width: SI[i] * 0.9,
 				height: SI[i] * 0.9,
 				href: LI[i],
-				style: `transform-origin: 50% 50%;rx: 20;stroke-width: 5;transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`
+				style: `transform-box: fill-box; transform-origin: center center;rx: 20;stroke-width: 5;transform:rotate(${FD[2][i]}deg); animation-duration:${D[i]}s; visibility:visible`
 			})
 		}
 	}
