@@ -376,7 +376,8 @@ window._B = (a) => {
 		const badgeGroup = acdc(u('nG'), 'g', {
 			id: `G${i}`,
 			class: 'b',
-			transform: `translate(${x} ${y})`
+			transform: `translate(${x} ${y})`,
+			style: `transform-box: fill-box;transform-origin: center center;`
 		})
 
 		acdc(badgeGroup, 'rect', {
