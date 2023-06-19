@@ -345,10 +345,10 @@ window._B = (a) => {
 	let pIndex = 0 // Separated variable for P[]
 	
 	for (let i = 0; i < a; i++) {
-		const transformOriginX = SI[i] / 2;
-		const transformOriginY = SI[i] / 2;
-		const x = P[pIndex] - sizeBoundary
-		const y = P[pIndex + 1] - sizeBoundary
+		const badgeSize = SI[i];
+		const halfBadgeSize = badgeSize / 2;
+		const x = P[pIndex] - sizeBoundary - halfBadgeSize;
+		const y = P[pIndex + 1] - sizeBoundary - halfBadgeSize;
 		pIndex += 2 // increment by 2 for each iteration
 
 		const badgeGroup = acdc(u('nG'), 'g', {
@@ -380,7 +380,6 @@ window._B = (a) => {
 		}
 	}
 }
-
 // create lines
 window._L = (v, h) => {
 	for (let i = 0; i < v; i++) {
