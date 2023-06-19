@@ -368,10 +368,9 @@ window._B = (a) => {
 	let pIndex = 0 // Separated variable for P[]
 	
 	for (let i = 0; i < a; i++) {
-		const badgeSize = SI[i];
-		const halfBadgeSize = badgeSize / 2;
-		const x = P[pIndex] - sizeBoundary - halfBadgeSize;
-		const y = P[pIndex + 1] - sizeBoundary - halfBadgeSize;
+		const halfSize = SI[i] / 2;
+		const x = P[pIndex] - halfSize;
+		const y = P[pIndex + 1] - halfSize;
 		pIndex += 2 // increment by 2 for each iteration
 
 		const badgeGroup = acdc(u('nG'), 'g', {
