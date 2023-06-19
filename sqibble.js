@@ -166,10 +166,33 @@ window._P = () => {
       <rect width="100%" height="100%" fill="#${C[13]}" />
       <path d="M0 20 L40 20" stroke="#${C[14]}" stroke-width="5" />
     </pattern>
+
     <pattern id="Polkadot" width="40" height="40" patternUnits="userSpaceOnUse">
       <rect width="100%" height="100%" fill="#${C[13]}" />
       <circle cx="20" cy="20" r="15" fill="#${C[14]}" />
     </pattern>
+
+	<pattern id="Checkers" width="20" height="20" patternUnits="userSpaceOnUse">
+		<rect width="10" height="10" fill="#${C[13]}" />
+		<rect x="10" y="10" width="10" height="10" fill="#${C[13]}" />
+		<rect x="10" y="0" width="10" height="10" fill="#${C[14]}" />
+		<rect x="0" y="10" width="10" height="10" fill="#${C[14]}" />
+	</pattern>
+
+	<pattern id="Stars" width="40" height="40" patternUnits="userSpaceOnUse">
+		<rect width="100%" height="100%" fill="#${C[13]}" />
+		<polygon points="20,0 25,15 40,15 30,25 35,40 20,30 5,40 10,25 0,15 15,15" fill="#${C[14]}" />
+	</pattern>
+
+	<pattern id="Waves" width="60" height="20" patternUnits="userSpaceOnUse">
+		<path d="M 0 10 Q 30 20 60 10 Q 30 0 0 10" stroke="#${C[14]}" stroke-width="5" fill="transparent" />
+		<rect width="100%" height="100%" fill="#${C[13]}" opacity="0.5" />
+	</pattern>
+
+	<pattern id="Honeycomb" width="34" height="39.392304845413264" patternUnits="userSpaceOnUse" viewBox="0 0 34 39.392304845413264">
+		<polygon points="17 0, 34 9.797402525853377, 34 29.594907319559887, 17 39.392304845413264, 0 29.594907319559887, 0 9.797402525853377" fill="#${C[13]}" />
+		<polygon points="17 0, 34 9.797402525853377, 34 29.594907319559887, 17 39.392304845413264, 0 29.594907319559887, 0 9.797402525853377" fill="#${C[14]}" stroke="#${C[14]}" stroke-width="2"/>
+	</pattern>
   `
 }
 
